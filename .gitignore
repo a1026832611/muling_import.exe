@@ -1,0 +1,12 @@
+.DS_Store
+.vscode/
+.learnings/
+__pycache__/
+*.py[cod]
+
+venv/
+build/
+dist/
+*.spec
+
+tests/

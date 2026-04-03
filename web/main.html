@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睦邻上传导入文件</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- 左侧菜单 -->
+        <div class="sidebar">
+            <div class="sidebar-title">功能菜单</div>
+            <div class="menu-item active" id="menu-person" onclick="switchTab('person')">
+                <span class="menu-icon">👤</span>人员管理
+            </div>
+            <div class="menu-item" id="menu-store" onclick="switchTab('store')">
+                <span class="menu-icon">🏪</span>药店管理
+            </div>
+            <div class="sidebar-bottom">
+                <div class="user-info" id="userInfo"></div>
+                <button class="btn-logout" id="logoutBtn" onclick="doLogout()">退出登录</button>
+            </div>
+        </div>
+
+        <!-- 右侧内容区 -->
+        <div class="content">
+            <!-- 人员管理页 -->
+            <div class="tab-page" id="tab-person">
+                <div class="page-header">
+                    <h2>人员管理</h2>
+                    <button type="button" class="template-link" onclick="downloadTemplate()">下载模板</button>
+                </div>
+
+                <div class="role-buttons">
+                    <button class="btn-role" id="btn-clerk" onclick="selectRole('睦邻-店员')">睦邻-店员</button>
+                    <button class="btn-role" id="btn-pharmacist" data-always-disabled="true" disabled>睦邻-药师</button>
+                    <button class="btn-role" id="btn-doctor" data-always-disabled="true" disabled>睦邻-医生</button>
+                </div>
+
+                <div class="progress-section" id="progressSection">
+                    <div class="progress-header">
+                        <span id="progressText">准备中...</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="progress-log" id="progressLog"></div>
+                    <div class="summary" id="summary"></div>
+                </div>
+            </div>
+
+            <!-- 药店管理页 -->
+            <div class="tab-page" id="tab-store" style="display: none;">
+                <h2>药店管理</h2>
+
+                <div class="role-buttons">
+                    <button class="btn-role" id="btn-store-add" data-always-disabled="true" disabled>药店-门店添加</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

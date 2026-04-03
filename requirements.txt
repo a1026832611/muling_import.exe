@@ -1,0 +1,6 @@
+pywebview>=4.0
+requests
+openpyxl
+pycryptodome
+urllib3
+pyinstaller

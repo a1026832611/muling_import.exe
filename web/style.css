@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* 登录页 */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 36px;
+    width: 360px;
+    max-width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #333;
+    font-size: 22px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #1890ff;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: #1890ff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #40a9ff;
+}
+
+.btn-primary:disabled {
+    background: #91caff;
+    cursor: not-allowed;
+}
+
+.error-msg {
+    color: #ff4d4f;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+/* 整体布局 */
+.layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 左侧菜单 */
+.sidebar {
+    width: 180px;
+    background: #001529;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-title {
+    padding: 20px 16px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-item {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.menu-item.active {
+    color: #fff;
+    background: #1890ff;
+}
+
+.menu-icon {
+    font-size: 16px;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-bottom .user-info {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.sidebar-bottom .btn-logout {
+    width: 100%;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidebar-bottom .btn-logout:hover {
+    color: #ff4d4f;
+    border-color: #ff4d4f;
+}
+
+/* 右侧内容区 */
+.content {
+    flex: 1;
+    padding: 30px 36px;
+    overflow-y: auto;
+    background: #f0f2f5;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin-bottom: 0;
+}
+
+.template-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border: 1px solid #1890ff;
+    border-radius: 6px;
+    background: #fff;
+    color: #1890ff;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.template-link:hover {
+    background: #1890ff;
+    color: #fff;
+}
+
+.tab-page {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 兼容旧样式 */
+.user-info {
+    color: #888;
+    font-size: 13px;
+}
+
+.role-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.btn-role {
+    padding: 14px;
+    border: 2px solid #1890ff;
+    border-radius: 8px;
+    background: #fff;
+    color: #1890ff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-role:hover {
+    background: #1890ff;
+    color: #fff;
+}
+
+.btn-role:disabled {
+    border-color: #d9d9d9;
+    color: #bbb;
+    background: #f5f5f5;
+    cursor: not-allowed;
+}
+
+
+/* 进度区域 */
+.progress-section {
+    margin-top: 20px;
+    display: none;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.progress-bar-wrap {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #1890ff;
+    border-radius: 4px;
+    width: 0;
+    transition: width 0.3s;
+}
+
+.progress-log {
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #555;
+    border: 1px solid #f0f0f0;
+    border-radius: 6px;
+    padding: 10px;
+    background: #fafafa;
+    user-select: text;
+}
+
+.log-entry {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.log-text {
+    flex: 1;
+    word-break: break-all;
+}
+
+.log-copy-btn {
+    flex-shrink: 0;
+    padding: 2px 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background: #fff;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.log-copy-btn:hover {
+    border-color: #1890ff;
+    color: #1890ff;
+}
+
+.log-success { color: #52c41a; }
+.log-fail { color: #ff4d4f; }
+.log-skip { color: #faad14; }
+
+.summary {
+    margin-top: 14px;
+    padding: 12px;
+    background: #f6ffed;
+    border: 1px solid #b7eb8f;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    display: none;
+}
